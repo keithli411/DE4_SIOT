@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: calc(5px + 1.5vmin);
+  color: #27535f
+}
+
+.Info-header {
+  background-color: #27535f;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(20px + 2vmin);
+  color: white;
+  font-style: italic;
+}
+
+.App-link {
+  color: #ff3342;
+}
+
+.Section-title {
+  min-height: 6vh;
+  font-size: 30px;
+  color: #27535f;
+  text-decoration: underline;
+}
+
+.Content-clicker {
+  color: #ff3342;
+  text-decoration: underline;
+}
