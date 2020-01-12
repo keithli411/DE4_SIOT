@@ -1,0 +1,12 @@
+[{
+  "name": "Time",
+  "type": "date",
+  "format": "%m/%d/%Y %H:%M"
+}, {
+  "name": "PM 2.5",
+  "type": "number"
+}, {
+  "name": "PM 10",
+  "type": "number"
+}
+]

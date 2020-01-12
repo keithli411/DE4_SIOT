@@ -2,47 +2,42 @@ import React from "react";
 import FusionCharts from "fusioncharts";
 import TimeSeries from "fusioncharts/fusioncharts.timeseries";
 import ReactFC from "react-fusioncharts";
+import dataFetch from './DataAirQuality_CONVERTED.json';
+import schemaFetch from './DataAirQuality_SCHEMA.json';
 
 ReactFC.fcRoot(FusionCharts, TimeSeries);
 
 const jsonify = res => res.json();
-const dataFetch = fetch(
-  "https://s3.eu-central-1.amazonaws.com/fusion.store/ft/data/plotting-two-variable-measures-data.json"
-).then(jsonify);
-const schemaFetch = fetch(
-  "https://s3.eu-central-1.amazonaws.com/fusion.store/ft/schema/plotting-two-variable-measures-schema.json"
-).then(jsonify);
-
 const dataSource = {
   chart: {},
   caption: {
-    text: "Cariaco Basin Sampling"
+    text: "PM Particle Concentration"
   },
   subcaption: {
-    text: "Analysis of O₂ Concentration and Surface Temperature"
+    text: "Data collected from Air Quality Sensor"
   },
   yaxis: [
     {
       plot: [
         {
-          value: "O2 concentration",
+          value: "PM 2.5",
           connectnulldata: true
         }
       ],
-      min: "3",
-      max: "6",
-      title: "O₂ Concentration (mg/L)"
+      min: "0",
+      max: "500",
+      title: "Concentration (μg/m³)"
     },
     {
       plot: [
         {
-          value: "Surface Temperature",
+          value: "PM 10",
           connectnulldata: true
         }
       ],
-      min: "18",
-      max: "30",
-      title: "Surface Temperature (°C)"
+      min: "0",
+      max: "500",
+      title: "Concentration (μg/m³)"
     }
   ]
 };
@@ -56,7 +51,7 @@ class PM25ChartViewer extends React.Component {
         type: "timeseries",
         renderAt: "container",
         width: "1200",
-        height: "800",
+        height: "900",
         dataSource
       }
     };
@@ -67,9 +62,8 @@ class PM25ChartViewer extends React.Component {
   }
 
   onFetchData() {
-    Promise.all([dataFetch, schemaFetch]).then(res => {
-      const data = res[0];
-      const schema = res[1];
+      const data = dataFetch;
+      const schema = schemaFetch;
       const fusionTable = new FusionCharts.DataStore().createDataTable(
         data,
         schema
@@ -79,17 +73,19 @@ class PM25ChartViewer extends React.Component {
       this.setState({
         timeseriesDs
       });
-    });
   }
 
   render() {
     return (
+      <div>
+      <div>{schemaFetch[0].name}</div>
       <div>
         {this.state.timeseriesDs.dataSource.data ? (
           <ReactFC {...this.state.timeseriesDs} />
         ) : (
           "loading"
         )}
+      </div>
       </div>
     );
   }

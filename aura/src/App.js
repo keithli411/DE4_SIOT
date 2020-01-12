@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import city from './city.jpeg';
-import rain from './rain.jpg';
 import { Container, Row, Col } from 'react-grid-system';
 import scrollToComponent from 'react-scroll-to-component';
-import PM25ChartViewer from './Chart.js'
-
+import PM25ChartViewer from './airqualityChart.js';
+import WeatherChartViewer from './weatherChart.js';
 
 class App extends React.Component {
 
@@ -37,7 +36,7 @@ class App extends React.Component {
                 This relationship has the potential to create urban environments that adapt and respond dynamically to weather, resulting in better living conditions.
               </p>
               <p>
-                A week-long experiment was setup, with recorded data, data analysis, and an interactive 'suggestions' program shown below.
+                A week-long experiment was setup, with recorded data, data analysis, and potential improvements shown below.
               </p>
               <a
                 className="App-link"
@@ -60,7 +59,7 @@ class App extends React.Component {
               <div onClick={() => scrollToComponent(this.Analysis)}> <p className='Content-clicker'>Analysis</p> </div>
             </Col>
             <Col>
-              <div onClick={() => scrollToComponent(this.Suggestions)}> <p className='Content-clicker'>Suggestions</p> </div>
+              <div onClick={() => scrollToComponent(this.Improvements)}> <p className='Content-clicker'>Improvements</p> </div>
             </Col>
           </Row>
 
@@ -76,6 +75,9 @@ class App extends React.Component {
             <Row justify="center">
               <PM25ChartViewer />
             </Row>
+            <Row justify="center">
+              <WeatherChartViewer />
+            </Row>
 
           </div>
 
@@ -89,9 +91,9 @@ class App extends React.Component {
 
 
           <div>
-          <section className='Suggestions' ref={(section) => {this.Suggestions = section; }}>
+          <section className='Improvements' ref={(section) => {this.Improvements = section; }}>
           <header className="Section-title">
-            Suggestions
+            Improvements
           </header>
           </section>
           </div>

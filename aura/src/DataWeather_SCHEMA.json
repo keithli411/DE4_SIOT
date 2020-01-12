@@ -1,0 +1,21 @@
+[{
+  "name": "Time",
+  "type": "date",
+  "format": "%m/%d/%Y %H:%M"
+}, {
+  "name": "Pressure",
+  "type": "number"
+}, {
+  "name": "PrecipIntensity",
+  "type": "number"
+}, {
+  "name": "PrecipProbability",
+  "type": "number"
+}, {
+  "name": "WindSpeed",
+  "type": "number"
+}, {
+  "name": "WindGust",
+  "type": "number"
+}
+]
