@@ -8,6 +8,6 @@ Coursework 1: Use `airquality.py` and `weatherRequest.py` scripts on Raspberry P
 
 Datasets: Full collected datasets; Jutyper Notebook with Data Analysis; Python Script for converting collected `.csv` data into `.json` data for web app visualisation.
 
-Coursework 2: Initialise a React environment with the `coursework_2_aura` directory level and use `npm start` to compile web app and execute on a web browser (duplicate initialisation files may need to be removed). Main Javascript React code can be found in `coursework_2_aura/src`. Check dependent npm packages in `packages.json`.
+Coursework 2: Source code for a web app written using `React.js`. Initialise a React environment with the `coursework_2_aura` directory level and use `npm start` to compile web app and execute on a web browser (duplicate initialisation files may need to be removed). Main Javascript React code can be found in `coursework_2_aura/src`. Check dependent npm packages in `packages.json`.
 
 Weather Data is powered by Dark Sky: https://darksky.net/dev/docs
