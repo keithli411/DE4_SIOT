@@ -25,7 +25,7 @@ def updateCsv2(fileName, dt, pressure, precipIntensity, precipProbability, windS
 
 def whatstheWeather():
     # API request url for current weather with unique API_key, and location co-ordinates
-    my_API_key = '8888c37c9304b8b299eb4291d850a5a7' # DELETE BEFORE MAKING PUBLIC
+    my_API_key = 'YOUR KEY HERE'
     Loc = [51.495378,-0.100589]
     fio = ForecastIO.ForecastIO(my_API_key, latitude=Loc[0], longitude=Loc[1]) #uses ForecastIO Python 3 wrapper to format request URL
 
