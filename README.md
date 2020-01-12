@@ -1,6 +1,7 @@
 # DE4_SIOT
 
 Project aura - January 2020
+
 DE4 Sensing IoT Coursework - Keith Li
 
 Coursework 1: Use 'airquality.py' and 'weatherRequest.py' scripts on Raspberry Pi (with sensor) and Windows Command-line (with your API key and forecastiopy3 wrapper library from Dark Sky).
